@@ -7,12 +7,6 @@ LIMIT 5;
 
 
 # 2. What day of the week do most users register on? We need to figure out when to schedule an ad campaign
-SELECT date_format(created_at,'%W') AS 'day of the week', COUNT(*) AS 'total registration'
-FROM users
-GROUP BY 1
-ORDER BY 2 DESC;
-
-# /*version 2*/
 SELECT 
     DAYNAME(created_at) AS day,
     COUNT(*) AS total
